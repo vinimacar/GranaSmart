@@ -1,0 +1,201 @@
+/* Estilos personalizados para o GranaSmart */
+
+:root {
+    --primary-color: #2e86de; /* Azul principal */
+    --secondary-color: #10ac84; /* Verde secundário */
+    --accent-color: #ff9f43; /* Laranja para destaque */
+    --light-bg: #f5f6fa;
+    --dark-text: #2f3542;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-text);
+    background-color: var(--light-bg);
+}
+
+/* Navbar personalizada */
+.navbar-dark.bg-primary {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards com sombras e bordas arredondadas */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cores personalizadas para os cards de resumo */
+.card.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.card.bg-success {
+    background-color: var(--secondary-color) !important;
+}
+
+/* Estilo para os valores nos cards */
+.card-text {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Estilo para as abas de autenticação */
+#auth-tabs .nav-link {
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 15px;
+}
+
+#auth-tabs .nav-link.active {
+    background-color: transparent;
+    color: white;
+    border-bottom: 3px solid white;
+}
+
+/* Estilo para os botões */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #1c75c8;
+    border-color: #1c75c8;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-success:hover, .btn-success:focus {
+    background-color: #0d9472;
+    border-color: #0d9472;
+}
+
+/* Estilo para as linhas da tabela */
+.table > tbody > tr {
+    vertical-align: middle;
+}
+
+.table > tbody > tr:hover {
+    background-color: rgba(46, 134, 222, 0.05);
+}
+
+/* Estilo para transações de receita e despesa */
+.transaction-income {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.transaction-expense {
+    color: #ee5253; /* Vermelho para despesas */
+    font-weight: 600;
+}
+
+/* Estilo para os ícones de ação */
+.action-icon {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1rem;
+    color: var(--dark-text);
+    transition: color 0.2s;
+}
+
+.action-icon:hover {
+    color: var(--primary-color);
+}
+
+.action-icon.delete:hover {
+    color: #ee5253;
+}
+
+/* Estilo para o footer */
+footer {
+    margin-top: auto;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Estilo para categorias */
+.category-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Cores para diferentes categorias */
+.category-alimentacao { background-color: #ffbe76; color: #fff; }
+.category-transporte { background-color: #ff7979; color: #fff; }
+.category-moradia { background-color: #badc58; color: #fff; }
+.category-lazer { background-color: #7ed6df; color: #fff; }
+.category-saude { background-color: #e056fd; color: #fff; }
+.category-educacao { background-color: #686de0; color: #fff; }
+.category-outros { background-color: #95afc0; color: #fff; }
+
+/* Estilo para o loader */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.loader::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilo para mensagens de alerta */
+.alert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
